@@ -8,6 +8,30 @@ static bool ValidarCodigoEstudiante(string codigox)
     }
     return true;
 }
+static bool ValidarTipoConsulta(string tipox)
+{
+    if (tipox == "matricula")
+    {
+        return true;
+    }
+    if (tipox == "pagos")
+    {
+        return true;
+    }
+    if (tipox == "constancia")
+    {
+        return true;
+    }
+    if (tipox == "plataforma")
+    {
+        return true;
+    }
+    if (tipox == "otro")
+    {
+        return true;
+    }
+    return false;
+}
 static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipoConsulta, ref string descripcion)
 {
     Console.Write("Ingrese código de estudiante: ");
@@ -33,6 +57,14 @@ if (ValidarCodigoEstudiante(codigo))
 else
 {
     Console.WriteLine("Error: el código está vacío o es demasiado corto.");
+}
+if (ValidarTipoConsulta(tipoConsulta))
+{
+    Console.WriteLine("Tipo de consulta válido.");
+}
+else
+{
+    Console.WriteLine("Error: tipo de consulta no válido.");
 }
 Console.WriteLine($"Código: {codigo}");
 Console.WriteLine($"Nombre: {nombre}");
