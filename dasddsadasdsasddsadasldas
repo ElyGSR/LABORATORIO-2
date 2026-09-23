@@ -1,0 +1,17 @@
+[33mcommit cdeaf72feddc9cc494875fdba3ba934c9167736d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/validaciones[m[33m)[m
+Author: ELYGSR <elygabrielsanchezrossell@gmail.com>
+Date:   Wed Sep 23 18:41:10 2026 -0500
+
+    valida código de estudiante (no vacío y longitud mínima)
+
+[33mcommit e74bc442e8bd6a9db90d2d199ee8af9538359839[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: ELYGSR <elygabrielsanchezrossell@gmail.com>
+Date:   Wed Sep 23 18:18:39 2026 -0500
+
+    Requerimiento 1:  Registrar datos básicos de una solicitud realizado
+
+[33mcommit 414163d31ac9605f48b69422b619de1c9601e77b[m
+Author: ELYGSR <elygabrielsanchezrossell@gmail.com>
+Date:   Wed Sep 23 06:03:42 2026 -0500
+
+    Primer Commit:reamemd y gitignore
