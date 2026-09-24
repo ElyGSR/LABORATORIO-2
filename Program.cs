@@ -60,6 +60,15 @@ static string CalcularPrioridad(string tipox)
     }
     return "Baja";
 }
+static void MostrarResumen(string codigox, string nombrex, string tipox, string descripcionx, string prioridadx)
+{
+    Console.WriteLine("===== RESUMEN DE LA SOLICITUD =====");
+    Console.WriteLine($"Código: {codigox}");
+    Console.WriteLine($"Nombre: {nombrex}");
+    Console.WriteLine($"Tipo de consulta: {tipox}");
+    Console.WriteLine($"Descripción: {descripcionx}");
+    Console.WriteLine($"Prioridad: {prioridadx}");
+}
 static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipoConsulta, ref string descripcion)
 {
     Console.Write("Ingrese código de estudiante: ");
@@ -115,7 +124,4 @@ else
 }
 string prioridad = CalcularPrioridad(tipoConsulta);
 Console.WriteLine($"Prioridad de atención: {prioridad}");
-Console.WriteLine($"Código: {codigo}");
-Console.WriteLine($"Nombre: {nombre}");
-Console.WriteLine($"Tipo de consulta: {tipoConsulta}");
-Console.WriteLine($"Descripción: {descripcion}");
+MostrarResumen(codigo, nombre, tipoConsulta, descripcion, prioridad);
