@@ -7,6 +7,7 @@ static void VerMenu()
     Console.WriteLine("2. Ver resumen");
     Console.WriteLine("3. Salir");
 }
+// Req. 8: parámetro por valor (copia). Solo lee el código, no lo modifica.
 static bool ValidarCodigoEstudiante(string codigox)
 {
     if (codigox.Length < LONGITUD_MINIMA_CODIGO)
@@ -15,6 +16,8 @@ static bool ValidarCodigoEstudiante(string codigox)
     }
     return true;
 }
+// Req. 8: parámetro por valor. Recibe el tipo y devuelve true o false.
+
 static bool ValidarTipoConsulta(string tipox)
 {
     if (tipox == "matricula")
@@ -39,6 +42,7 @@ static bool ValidarTipoConsulta(string tipox)
     }
     return false;
 }
+// Req. 8: parámetro por valor. Sirve para validar cualquier texto obligatorio.
 static bool ValidarTextoObligatorio(string textox)
 {
     if (textox.Length == 0)
@@ -47,7 +51,7 @@ static bool ValidarTextoObligatorio(string textox)
     }
     return true;
 }
-
+// Req. 8: parámetro por valor. Recibe el tipo y devuelve la prioridad.
 static string CalcularPrioridad(string tipox)
 {
     if (tipox == "matricula" || tipox == "pagos")
@@ -60,6 +64,7 @@ static string CalcularPrioridad(string tipox)
     }
     return "Baja";
 }
+// Req. 8: parámetros por valor. Solo muestra los datos, no los modifica.
 static void MostrarResumen(string codigox, string nombrex, string tipox, string descripcionx, string prioridadx)
 {
     Console.WriteLine("===== RESUMEN DE LA SOLICITUD =====");
@@ -69,6 +74,7 @@ static void MostrarResumen(string codigox, string nombrex, string tipox, string 
     Console.WriteLine($"Descripción: {descripcionx}");
     Console.WriteLine($"Prioridad: {prioridadx}");
 }
+// Req. 8: parámetros por referencia (ref). Llena las variables del programa principal.
 static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipoConsulta, ref string descripcion)
 {
     Console.Write("Ingrese código de estudiante: ");
