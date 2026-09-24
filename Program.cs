@@ -39,6 +39,15 @@ static bool ValidarTipoConsulta(string tipox)
     }
     return false;
 }
+static bool ValidarTextoObligatorio(string textox)
+{
+    if (textox.Length == 0)
+    {
+        return false;
+    }
+    return true;
+}
+
 static string CalcularPrioridad(string tipox)
 {
     if (tipox == "matricula" || tipox == "pagos")
@@ -86,6 +95,23 @@ if (ValidarTipoConsulta(tipoConsulta))
 else
 {
     Console.WriteLine("Error: tipo de consulta no válido.");
+}
+if (ValidarTextoObligatorio(nombre))
+{
+    Console.WriteLine("Nombre válido.");
+}
+else
+{
+    Console.WriteLine("Error: el nombre es obligatorio.");
+}
+
+if (ValidarTextoObligatorio(descripcion))
+{
+    Console.WriteLine("Descripción válida.");
+}
+else
+{
+    Console.WriteLine("Error: la descripción es obligatoria.");
 }
 string prioridad = CalcularPrioridad(tipoConsulta);
 Console.WriteLine($"Prioridad de atención: {prioridad}");
