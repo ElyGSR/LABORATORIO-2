@@ -39,6 +39,18 @@ static bool ValidarTipoConsulta(string tipox)
     }
     return false;
 }
+static string CalcularPrioridad(string tipox)
+{
+    if (tipox == "matricula" || tipox == "pagos")
+    {
+        return "Alta";
+    }
+    if (tipox == "constancia" || tipox == "plataforma")
+    {
+        return "Media";
+    }
+    return "Baja";
+}
 static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipoConsulta, ref string descripcion)
 {
     Console.Write("Ingrese código de estudiante: ");
@@ -75,6 +87,8 @@ else
 {
     Console.WriteLine("Error: tipo de consulta no válido.");
 }
+string prioridad = CalcularPrioridad(tipoConsulta);
+Console.WriteLine($"Prioridad de atención: {prioridad}");
 Console.WriteLine($"Código: {codigo}");
 Console.WriteLine($"Nombre: {nombre}");
 Console.WriteLine($"Tipo de consulta: {tipoConsulta}");
