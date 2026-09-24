@@ -1,0 +1,15 @@
+[33m29aa8b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/varias-solicitudes[m[33m, [m[1;31morigin/feature/varias-solicitudes[m[33m)[m Req. 10: registra 3 solicitudes usando arreglos y un for
+[33m93bef15[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m Req. 9: documenta alcance de variables locales y del programa principal
+[33m7080aa0[m Req. 8: documenta paso de parámetros por valor y por referencia
+[33m9a8f62b[m Req. 7: crea MostrarResumen para mostrar la solicitud registrada
+[33m2d38c66[m Merge feature/validacion-texto: Req. 6
+[33m23e1df9[m[33m ([m[1;31morigin/feature/validacion-texto[m[33m, [m[1;32mfeature/validacion-texto[m[33m)[m Req. 6: valida texto obligatorio para nombre y descripción
+[33mee70a13[m Merge feature/prioridad: Req. 5
+[33mb67df46[m[33m ([m[1;31morigin/feature/prioridad[m[33m, [m[1;32mfeature/prioridad[m[33m)[m Req. 5: calcula prioridad de atención según tipo de consulta
+[33mf476c73[m Merge feature/validaciones: Req. 2, 3 y 4
+[33m8c33de3[m[33m ([m[1;31morigin/feature/validaciones[m[33m, [m[1;32mfeature/validaciones[m[33m)[m Req. 4: crea función VerMenu sin retorno
+[33m1c69cc1[m Req. 3: valida tipo de consulta contra lista básica
+[33m0786097[m Req. 2: valida código de estudiante (no vacío y longitud mínima)
+[33mcdeaf72[m valida código de estudiante (no vacío y longitud mínima)
+[33me74bc44[m Requerimiento 1:  Registrar datos básicos de una solicitud realizado
+[33m414163d[m Primer Commit:reamemd y gitignore
