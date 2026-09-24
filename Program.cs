@@ -1,5 +1,12 @@
 ﻿const int LONGITUD_MINIMA_CODIGO = 6;
 
+static void VerMenu()
+{
+    Console.WriteLine("===== SOPORTE ACADÉMICO =====");
+    Console.WriteLine("1. Registrar solicitud");
+    Console.WriteLine("2. Ver resumen");
+    Console.WriteLine("3. Salir");
+}
 static bool ValidarCodigoEstudiante(string codigox)
 {
     if (codigox.Length < LONGITUD_MINIMA_CODIGO)
@@ -45,6 +52,8 @@ static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipo
 }
 
 Console.WriteLine("Bienvenido al sistema de soporte académico");
+VerMenu();
+
 string codigo = "";
 string nombre = "";
 string tipoConsulta = "";
