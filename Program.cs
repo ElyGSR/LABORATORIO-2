@@ -54,6 +54,8 @@ static bool ValidarTextoObligatorio(string textox)
 // Req. 8: parámetro por valor. Recibe el tipo y devuelve la prioridad.
 static string CalcularPrioridad(string tipox)
 {
+ // Req. 9: tipox es una variable local (parámetro). Solo existe dentro de esta función.
+
     if (tipox == "matricula" || tipox == "pagos")
     {
         return "Alta";
@@ -89,6 +91,7 @@ static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipo
 
 Console.WriteLine("Bienvenido al sistema de soporte académico");
 VerMenu();
+// Req. 9: variables del programa principal. Existen durante toda la ejecución.
 
 string codigo = "";
 string nombre = "";
