@@ -76,6 +76,14 @@ static void MostrarResumen(string codigox, string nombrex, string tipox, string 
     Console.WriteLine($"Descripción: {descripcionx}");
     Console.WriteLine($"Prioridad: {prioridadx}");
 }
+// Req. 10: recibe los arreglos y muestra el resumen de cada solicitud registrada.
+static void MostrarTodas(string[] codigosx, string[] nombresx, string[] tiposx, string[] descripcionesx, string[] prioridadesx)
+{
+    for (int i = 0; i < codigosx.Length; i++)
+    {
+        MostrarResumen(codigosx[i], nombresx[i], tiposx[i], descripcionesx[i], prioridadesx[i]);
+    }
+}
 // Req. 8: parámetros por referencia (ref). Llena las variables del programa principal.
 static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipoConsulta, ref string descripcion)
 {
@@ -91,46 +99,69 @@ static void RegistrarDatos(ref string codigo, ref string nombre, ref string tipo
 
 Console.WriteLine("Bienvenido al sistema de soporte académico");
 VerMenu();
-// Req. 9: variables del programa principal. Existen durante toda la ejecución.
 
+// Req. 10: arreglos para guardar 3 solicitudes (una posición por solicitud).
+string[] codigos = { "", "", "" };
+string[] nombres = { "", "", "" };
+string[] tipos = { "", "", "" };
+string[] descripciones = { "", "", "" };
+string[] prioridades = { "", "", "" };
+
+// Req. 9: variables del programa principal. Existen durante toda la ejecución.
 string codigo = "";
 string nombre = "";
 string tipoConsulta = "";
 string descripcion = "";
-RegistrarDatos(ref codigo, ref nombre, ref tipoConsulta, ref descripcion);
-if (ValidarCodigoEstudiante(codigo))
+
+for (int i = 0; i < codigos.Length; i++)
 {
-    Console.WriteLine("Código válido.");
-}
-else
-{
-    Console.WriteLine("Error: el código está vacío o es demasiado corto.");
-}
-if (ValidarTipoConsulta(tipoConsulta))
-{
-    Console.WriteLine("Tipo de consulta válido.");
-}
-else
-{
-    Console.WriteLine("Error: tipo de consulta no válido.");
-}
-if (ValidarTextoObligatorio(nombre))
-{
-    Console.WriteLine("Nombre válido.");
-}
-else
-{
-    Console.WriteLine("Error: el nombre es obligatorio.");
+    Console.WriteLine($"--- Solicitud {i + 1} ---");
+    RegistrarDatos(ref codigo, ref nombre, ref tipoConsulta, ref descripcion);
+
+    if (ValidarCodigoEstudiante(codigo))
+    {
+        Console.WriteLine("Código válido.");
+    }
+    else
+    {
+        Console.WriteLine("Error: el código está vacío o es demasiado corto.");
+    }
+
+    if (ValidarTipoConsulta(tipoConsulta))
+    {
+        Console.WriteLine("Tipo de consulta válido.");
+    }
+    else
+    {
+        Console.WriteLine("Error: tipo de consulta no válido.");
+    }
+
+    if (ValidarTextoObligatorio(nombre))
+    {
+        Console.WriteLine("Nombre válido.");
+    }
+    else
+    {
+        Console.WriteLine("Error: el nombre es obligatorio.");
+    }
+
+    if (ValidarTextoObligatorio(descripcion))
+    {
+        Console.WriteLine("Descripción válida.");
+    }
+    else
+    {
+        Console.WriteLine("Error: la descripción es obligatoria.");
+    }
+
+    string prioridad = CalcularPrioridad(tipoConsulta);
+    Console.WriteLine($"Prioridad de atención: {prioridad}");
+
+    codigos[i] = codigo;
+    nombres[i] = nombre;
+    tipos[i] = tipoConsulta;
+    descripciones[i] = descripcion;
+    prioridades[i] = prioridad;
 }
 
-if (ValidarTextoObligatorio(descripcion))
-{
-    Console.WriteLine("Descripción válida.");
-}
-else
-{
-    Console.WriteLine("Error: la descripción es obligatoria.");
-}
-string prioridad = CalcularPrioridad(tipoConsulta);
-Console.WriteLine($"Prioridad de atención: {prioridad}");
-MostrarResumen(codigo, nombre, tipoConsulta, descripcion, prioridad);
+MostrarTodas(codigos, nombres, tipos, descripciones, prioridades);
